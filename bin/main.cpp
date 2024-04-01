@@ -5,11 +5,10 @@
 #include "map"
 
 int main () {
-    std::map<int,int> v1= {{1,2},{3,4}, {5,6}};
-    //std::set<int> v1 = {1,2,3,4,5};
-    auto res2 = v1 | keys() | filter([](int i){return i == 3;});
-    for (auto val : res2 ) {
-        std::cout << val << " ";
-    } std::cout << '\n';
-
+    std::vector<int> test_vector {1,2,3,4,5};
+    std::vector<int> result_vector {25,16,9};
+    auto result = test_vector | take(3) | reverse() | transform([](int i){return i * i;});
+    for (auto i: result) {
+        std::cout << i << ' ';
+    }
 }
